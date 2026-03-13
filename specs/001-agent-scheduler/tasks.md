@@ -244,26 +244,26 @@
 
 ### Logging & Observability
 
-- [ ] T070 [P] Implement `/log` command in src/cli/interactive/log.ts
-- [ ] T071 [P] Add structured logging throughout modules
+- [X] T070 [P] Implement `/log` command in src/cli/interactive/log.ts
+- [X] T071 [P] Add structured logging throughout modules
 
 ### Session Retention
 
-- [ ] T072 Implement IRetentionPolicy in src/workspace/retention.ts
-- [ ] T073 [P] Implement cleanup command in src/cli/commands/cleanup.ts
+- [X] T072 Implement IRetentionPolicy in src/workspace/retention.ts
+- [X] T073 [P] Implement cleanup command in src/cli/commands/cleanup.ts
 
 ### Stop Command
 
-- [ ] T074 Implement stop command in src/cli/commands/stop.ts
+- [X] T074 Implement stop command in src/cli/commands/stop.ts
 
 ### Configuration
 
-- [ ] T075 [P] Implement global config loading in src/config/loader.ts
-- [ ] T076 [P] Implement project config in src/config/project-config.ts
+- [X] T075 [P] Implement global config loading in src/config/loader.ts
+- [X] T076 [P] Implement project config in src/config/project-config.ts
 
 ### Documentation & Validation
 
-- [ ] T077 Create sample prompt templates in prompts/sub-agent/*.md
+- [X] T077 Create sample prompt templates in prompts/sub-agent/*.md
 - [ ] T078 Run quickstart.md validation scenarios
 - [ ] T079 Create test fixtures in tests/fixtures/flows/
 
