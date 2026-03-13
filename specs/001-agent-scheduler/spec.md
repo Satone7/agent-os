@@ -5,6 +5,16 @@
 **Status**: Draft
 **Input**: User description: "Agent-driven multi-agent collaboration scheduler"
 
+## Clarifications
+
+### Session 2026-03-13
+
+- Q: What is the user authentication model? → A: Single-user local tool (no authentication required)
+- Q: What is the session data retention policy? → A: Configurable retention period with auto-cleanup (default 7 days)
+- Q: What observability and debugging support is needed? → A: Structured logs with CLI access (`/log` command, log files)
+- Q: How is the main agent implemented? → A: Custom orchestrator spawning Claude CLI sub-agents
+- Q: What is the flow execution model? → A: Strictly sequential phases (MVP, DAG support planned for future)
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Execute Predefined Workflow (Priority: P1)
@@ -95,7 +105,7 @@ As an advanced user, I want to define my own flows with custom phases, so that I
 - What happens when a sub-agent process crashes unexpectedly? The main agent detects the crash via process monitoring and attempts restart with retry count incremented.
 - What happens when Claude CLI is not installed or unavailable? The system fails gracefully with a clear error message indicating the dependency is missing.
 - What happens when no flow matches the user's request? The main agent asks the user to clarify or select from available flows.
-- What happens when the workspace disk is full? The system detects write failures and alerts the user, potentially archiving old sessions.
+- What happens when the workspace disk is full? The system detects write failures, alerts the user, and offers to run cleanup of expired sessions to free space.
 - What happens when a phase's `require_user_confirm` is true? The main agent pauses before the next phase and waits for explicit user approval.
 - What happens when the maximum total retries is exceeded? The flow is aborted and the user is notified of the failure.
 
@@ -118,16 +128,20 @@ As an advanced user, I want to define my own flows with custom phases, so that I
 - **FR-013**: System MUST load flows from configurable paths including user-defined locations
 - **FR-014**: System MUST validate flow configurations and report errors without crashing
 - **FR-015**: System MUST isolate each session's workspace to prevent interference between concurrent sessions
+- **FR-016**: System MUST operate as a single-user local CLI tool without built-in authentication (relies on underlying Claude CLI authentication)
+- **FR-017**: System MUST support configurable session retention with automatic cleanup of expired sessions (default: 7 days after completion)
+- **FR-018**: System MUST maintain structured logs accessible via CLI (`/log` command) for debugging and auditing
+- **FR-019**: System MUST execute flow phases in strictly sequential order (DAG/parallel support planned for future versions)
 
 ### Key Entities
 
 - **Session**: Represents a single execution of a flow. Contains id, state (created/running/paused/completed/stopped), workspace path, flow reference, current phase index, and status for all phases.
 
-- **Flow**: A predefined workflow template. Contains id, name, version, trigger conditions (keywords/patterns), ordered phases, and flow-level settings.
+- **Flow**: A predefined workflow template. Contains id, name, version, trigger conditions (keywords/patterns), strictly ordered phases (sequential execution only in MVP), and flow-level settings. Future versions may support DAG-based parallel execution.
 
 - **Phase**: A single step within a flow. Contains id, name, description, agent configuration (model, prompt template, skills, tools), time slice settings, expected outputs, and phase config (max retries, skippable, requires confirmation).
 
-- **Main Agent**: The orchestrator that runs in interactive mode. Accepts user input, matches flows, spawns sub-agents, monitors progress, makes decisions (continue/retry/skip/ask), and persists state.
+- **Main Agent**: A custom orchestrator program (not a Claude CLI instance) responsible for flow orchestration. Accepts user input, matches flows, spawns sub-agents via Claude CLI subprocesses, monitors progress, makes decisions (continue/retry/skip/ask), and persists state.
 
 - **Sub Agent**: A worker agent spawned to execute a specific phase. Runs in non-interactive mode with a scoped workspace, writes outputs to files, and communicates status through conversation logs.
 
