@@ -24,13 +24,13 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project directory structure per design.md
-- [ ] T002 Initialize Node.js project with package.json (ESM, Node 20+)
-- [ ] T003 [P] Configure TypeScript with tsconfig.json (strict mode, ESM)
-- [ ] T004 [P] Configure Vitest for testing in vitest.config.ts
-- [ ] T005 [P] Configure ESLint and Prettier in .eslintrc.json and .prettierrc
-- [ ] T006 [P] Install dependencies: commander, inquirer, chokidar, js-yaml, zod, pino, date-fns, cosmiconfig
-- [ ] T007 Create src/types/index.ts barrel export for shared types
+- [X] T001 Create project directory structure per design.md
+- [X] T002 Initialize Node.js project with package.json (ESM, Node 20+)
+- [X] T003 [P] Configure TypeScript with tsconfig.json (strict mode, ESM)
+- [X] T004 [P] Configure Vitest for testing in vitest.config.ts
+- [X] T005 [P] Configure ESLint and Prettier in .eslintrc.json and .prettierrc
+- [X] T006 [P] Install dependencies: commander, inquirer, chokidar, js-yaml, zod, pino, date-fns, cosmiconfig
+- [X] T007 Create src/types/index.ts barrel export for shared types
 
 ---
 
@@ -42,19 +42,19 @@
 
 ### Core Types
 
-- [ ] T008 [P] Define Session type in src/types/session.ts
-- [ ] T009 [P] Define Flow and Phase types in src/types/flow.ts
-- [ ] T010 [P] Define error types in src/types/errors.ts
-- [ ] T011 [P] Define time slice and duration utilities in src/utils/time.ts
+- [X] T008 [P] Define Session type in src/types/session.ts
+- [X] T009 [P] Define Flow and Phase types in src/types/flow.ts
+- [X] T010 [P] Define error types in src/types/errors.ts
+- [X] T011 [P] Define time slice and duration utilities in src/utils/time.ts
 
 ### Logging Infrastructure
 
-- [ ] T012 Implement pino logger factory in src/logging/logger.ts
+- [X] T012 Implement pino logger factory in src/logging/logger.ts
 
 ### Validation Foundation
 
-- [ ] T013 [P] Define Zod schema for Flow in src/flow/validator.ts
-- [ ] T014 [P] Define Zod schema for Session state in src/schemas/session-schema.ts
+- [X] T013 [P] Define Zod schema for Flow in src/flow/validator.ts
+- [X] T014 [P] Define Zod schema for Session state in src/schemas/session-schema.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -68,41 +68,41 @@
 
 ### Tests for User Story 1 (TDD - Write First)
 
-- [ ] T015 [P] [US1] Unit test for flow matching in tests/unit/flow/flow-matcher.test.ts
-- [ ] T016 [P] [US1] Unit test for flow loader in tests/unit/flow/loader.test.ts
-- [ ] T017 [P] [US1] Unit test for session manager in tests/unit/scheduler/session-manager.test.ts
-- [ ] T018 [P] [US1] Unit test for spawner in tests/unit/scheduler/spawner.test.ts
-- [ ] T019 [P] [US1] Integration test for session lifecycle in tests/integration/session-lifecycle.test.ts
+- [X] T015 [P] [US1] Unit test for flow matching in tests/unit/flow/flow-matcher.test.ts
+- [X] T016 [P] [US1] Unit test for flow loader in tests/unit/flow/loader.test.ts
+- [X] T017 [P] [US1] Unit test for session manager in tests/unit/scheduler/session-manager.test.ts
+- [X] T018 [P] [US1] Unit test for spawner in tests/unit/scheduler/spawner.test.ts
+- [X] T019 [P] [US1] Integration test for session lifecycle in tests/integration/session-lifecycle.test.ts
 
 ### Implementation for User Story 1
 
 #### Flow Engine (Flow Matching)
 
-- [ ] T020 [P] [US1] Implement IFlowLoader interface in src/flow/loader.ts
-- [ ] T021 [P] [US1] Implement flow validator in src/flow/validator.ts
-- [ ] T022 [US1] Implement flow matcher with keyword/pattern matching in src/agent/flow-matcher.ts
-- [ ] T023 [US1] Create sample flow YAML in flows/software-development.yaml
+- [X] T020 [P] [US1] Implement IFlowLoader interface in src/flow/loader.ts
+- [X] T021 [P] [US1] Implement flow validator in src/flow/validator.ts
+- [X] T022 [US1] Implement flow matcher with keyword/pattern matching in src/agent/flow-matcher.ts
+- [X] T023 [US1] Create sample flow YAML in flows/software-development.yaml
 
 #### Session Management
 
-- [ ] T024 [P] [US1] Implement ISessionManager in src/scheduler/session-manager.ts
-- [ ] T025 [P] [US1] Implement state serializer in src/agent/state-serializer.ts
+- [X] T024 [P] [US1] Implement ISessionManager in src/scheduler/session-manager.ts
+- [X] T025 [P] [US1] Implement state serializer in src/agent/state-serializer.ts
 
 #### Sub-Agent Spawning
 
-- [ ] T026 [US1] Implement ISpawner with Claude CLI subprocess in src/scheduler/spawner.ts
-- [ ] T027 [US1] Implement conversation path resolver in src/utils/conversation-path.ts
+- [X] T026 [US1] Implement ISpawner with Claude CLI subprocess in src/scheduler/spawner.ts
+- [X] T027 [US1] Implement conversation path resolver in src/utils/conversation-path.ts
 
 #### CLI Commands
 
-- [ ] T028 [US1] Implement CLI entry point in src/cli/index.ts
-- [ ] T029 [P] [US1] Implement start command in src/cli/commands/start.ts
-- [ ] T030 [P] [US1] Implement status command in src/cli/commands/status.ts
-- [ ] T031 [P] [US1] Implement list command in src/cli/commands/list.ts
+- [X] T028 [US1] Implement CLI entry point in src/cli/index.ts
+- [X] T029 [P] [US1] Implement start command in src/cli/commands/start.ts
+- [X] T030 [P] [US1] Implement status command in src/cli/commands/status.ts
+- [X] T031 [P] [US1] Implement list command in src/cli/commands/list.ts
 
 #### Workspace Management
 
-- [ ] T032 [US1] Implement IWorkspaceManager in src/workspace/manager.ts
+- [X] T032 [US1] Implement IWorkspaceManager in src/workspace/manager.ts
 
 **Checkpoint**: User Story 1 complete - users can start sessions, match flows, and execute phases
 
