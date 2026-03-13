@@ -116,28 +116,28 @@
 
 ### Tests for User Story 2 (TDD - Write First)
 
-- [ ] T033 [P] [US2] Unit test for monitor in tests/unit/scheduler/monitor.test.ts
-- [ ] T034 [P] [US2] Unit test for interactive commands in tests/unit/cli/interactive.test.ts
+- [X] T033 [P] [US2] Unit test for monitor in tests/unit/scheduler/monitor.test.ts
+- [X] T034 [P] [US2] Unit test for interactive commands in tests/unit/cli/interactive.test.ts
 - [ ] T035 [P] [US2] Integration test for user intervention in tests/integration/user-intervention.test.ts
 
 ### Implementation for User Story 2
 
 #### Time-Slice Monitoring
 
-- [ ] T036 [US2] Implement IMonitor with setTimeout polling in src/scheduler/monitor.ts
+- [X] T036 [US2] Implement IMonitor with setTimeout polling in src/scheduler/monitor.ts
 
 #### Interactive Commands
 
-- [ ] T037 [P] [US2] Implement `/status` interactive command in src/cli/interactive/status.ts
-- [ ] T038 [P] [US2] Implement `/pause` interactive command in src/cli/interactive/pause.ts
-- [ ] T039 [P] [US2] Implement `/resume` interactive command in src/cli/interactive/resume.ts
-- [ ] T040 [P] [US2] Implement `/skip` interactive command in src/cli/interactive/skip.ts
-- [ ] T041 [P] [US2] Implement `/input` interactive command in src/cli/interactive/input.ts
-- [ ] T042 [P] [US2] Implement `/stop` interactive command in src/cli/interactive/stop.ts
+- [X] T037 [P] [US2] Implement `/status` interactive command in src/cli/interactive/status.ts
+- [X] T038 [P] [US2] Implement `/pause` interactive command in src/cli/interactive/pause.ts
+- [X] T039 [P] [US2] Implement `/resume` interactive command in src/cli/interactive/resume.ts
+- [X] T040 [P] [US2] Implement `/skip` interactive command in src/cli/interactive/skip.ts
+- [X] T041 [P] [US2] Implement `/input` interactive command in src/cli/interactive/input.ts
+- [X] T042 [P] [US2] Implement `/stop` interactive command in src/cli/interactive/stop.ts
 
 #### Status Display
 
-- [ ] T043 [US2] Implement status formatter in src/cli/formatters/status.ts
+- [X] T043 [US2] Implement status formatter in src/cli/formatters/status.ts
 
 **Checkpoint**: User Story 2 complete - users can monitor and control running agents
 
