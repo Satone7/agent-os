@@ -194,13 +194,13 @@
 
 #### Resume Command
 
-- [ ] T058 [US4] Implement resume command in src/cli/commands/resume.ts
-- [ ] T059 [US4] Implement `--last` flag for most recent session in src/cli/commands/resume.ts
+- [X] T058 [US4] Implement resume command in src/cli/commands/resume.ts
+- [X] T059 [US4] Implement `--last` flag for most recent session in src/cli/commands/resume.ts
 
 #### Session Persistence
 
 - [ ] T060 [US4] Enhance state serializer for crash recovery in src/agent/state-serializer.ts
-- [ ] T061 [US4] Implement session state validation on load in src/scheduler/session-validator.ts
+- [X] T061 [US4] Implement session state validation on load in src/scheduler/session-validator.ts
 
 **Checkpoint**: User Story 4 complete - sessions persist and can be resumed
 
@@ -222,17 +222,17 @@
 
 #### Flow Discovery
 
-- [ ] T065 [US5] Implement configurable flow paths in src/flow/paths.ts
-- [ ] T066 [US5] Implement flow hot-reload in src/flow/hot-reload.ts
+- [X] T065 [US5] Implement configurable flow paths in src/flow/paths.ts
+- [X] T066 [US5] Implement flow hot-reload in src/flow/hot-reload.ts
 
 #### Flow Commands
 
-- [ ] T067 [P] [US5] Implement `flow list` command in src/cli/commands/flow.ts
-- [ ] T068 [P] [US5] Implement `flow show` command in src/cli/commands/flow.ts
+- [X] T067 [P] [US5] Implement `flow list` command in src/cli/commands/flow.ts
+- [X] T068 [P] [US5] Implement `flow show` command in src/cli/commands/flow.ts
 
 #### Validation
 
-- [ ] T069 [US5] Enhance validator with detailed error messages in src/flow/validator.ts
+- [X] T069 [US5] Enhance validator with detailed error messages in src/flow/validator.ts
 
 **Checkpoint**: User Story 5 complete - users can extend with custom flows
 
