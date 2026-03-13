@@ -1,0 +1,94 @@
+id: software-development
+name: Software Development
+version: 1.0.0
+description: Complete software development workflow from requirements to deployment
+
+trigger:
+  keywords:
+    - develop
+    - build
+    - create
+    - implement
+    - make
+    - code
+  patterns:
+    - "build (a )?(todo|app|application|system|service)"
+    - "develop (a )?.+"
+    - "implement (a )?.+"
+    - "create (a )?.+"
+
+phases:
+  - id: requirement-analysis
+    name: Requirement Analysis
+    description: Analyze and document requirements
+    agent:
+      promptTemplate: prompts/sub-agent/requirement.md
+    timeSlice:
+      default: 10m
+    outputs:
+      - docs/requirements.md
+      - docs/user-stories.md
+    config:
+      maxRetries: 2
+      allowSkip: false
+
+  - id: architecture-design
+    name: Architecture Design
+    description: Design the technical architecture
+    agent:
+      promptTemplate: prompts/sub-agent/architecture.md
+    timeSlice:
+      default: 15m
+    outputs:
+      - docs/architecture.md
+      - docs/api-design.md
+    config:
+      maxRetries: 2
+      allowSkip: false
+
+  - id: implementation
+    name: Implementation
+    description: Write the code
+    agent:
+      promptTemplate: prompts/sub-agent/implementation.md
+    timeSlice:
+      default: 20m
+    outputs:
+      - src/**/*.ts
+      - src/**/*.js
+    config:
+      maxRetries: 3
+      allowSkip: false
+
+  - id: testing
+    name: Testing
+    description: Write and run tests
+    agent:
+      promptTemplate: prompts/sub-agent/testing.md
+    timeSlice:
+      default: 15m
+    outputs:
+      - tests/**/*.test.ts
+      - coverage/
+    config:
+      maxRetries: 2
+      allowSkip: false
+
+  - id: code-review
+    name: Code Review
+    description: Review code quality and documentation
+    agent:
+      promptTemplate: prompts/sub-agent/review.md
+    timeSlice:
+      default: 10m
+    outputs:
+      - docs/review.md
+    config:
+      maxRetries: 1
+      allowSkip: true
+
+settings:
+  defaultModel: claude-sonnet-4-6
+  failurePolicy:
+    maxTotalRetries: 10
+    userNotifyThreshold: 3
