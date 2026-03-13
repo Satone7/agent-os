@@ -68,9 +68,11 @@ export function createCLI(): Command {
     });
 
   // Flow commands
-  program
+  const flowCmd = program
     .command('flow')
-    .description('Manage flows')
+    .description('Manage flows');
+
+  flowCmd
     .command('list')
     .description('List available flows')
     .action(async () => {
@@ -78,8 +80,7 @@ export function createCLI(): Command {
       await flowListCommand();
     });
 
-  program
-    .command('flow')
+  flowCmd
     .command('show <flowId>')
     .description('Show flow details')
     .action(async (flowId: string) => {
