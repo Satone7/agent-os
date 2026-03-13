@@ -160,16 +160,16 @@
 
 #### Diagnostics
 
-- [ ] T048 [US3] Implement IDiagnostician in src/agent/diagnostician.ts
-- [ ] T049 [P] [US3] Implement loop detection algorithm in src/agent/diagnostics/loop-detector.ts
-- [ ] T050 [P] [US3] Implement block detection algorithm in src/agent/diagnostics/block-detector.ts
-- [ ] T051 [P] [US3] Implement completion detection in src/agent/diagnostics/completion-detector.ts
+- [X] T048 [US3] Implement IDiagnostician in src/agent/diagnostician.ts
+- [X] T049 [P] [US3] Implement loop detection algorithm in src/agent/diagnostics/loop-detector.ts
+- [X] T050 [P] [US3] Implement block detection algorithm in src/agent/diagnostics/block-detector.ts
+- [X] T051 [P] [US3] Implement completion detection in src/agent/diagnostics/completion-detector.ts
 
 #### Recovery Logic
 
-- [ ] T052 [US3] Implement recovery decision logic in src/agent/recovery.ts
-- [ ] T053 [US3] Create recovery prompt templates in prompts/recovery/loop-break.md
-- [ ] T054 [P] [US3] Create recovery prompt templates in prompts/recovery/timeout-guidance.md
+- [X] T052 [US3] Implement recovery decision logic in src/agent/recovery.ts
+- [X] T053 [US3] Create recovery prompt templates in prompts/recovery/loop-break.md
+- [X] T054 [P] [US3] Create recovery prompt templates in prompts/recovery/timeout-guidance.md
 
 #### Main Agent Controller
 
