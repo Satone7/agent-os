@@ -358,6 +358,59 @@ With multiple developers:
 
 ---
 
+---
+
+## Phase 9: Fix PR #1 Code Review Issues
+
+**Purpose**: Address code review feedback from PR #1 before merge
+
+**Source**: Code review by qwen3.5-plus on 2026-03-13
+
+### Summary of Issues
+
+1. **ESLint TypeScript Resolver** - Missing `eslint-import-resolver-typescript` causing resolver errors
+2. **diagnostician.ts:158** - async method `detectCompletion` has no await expression
+3. **diagnostician.ts:194** - Should use optional chain instead of `&&` check
+4. **diagnostician.ts:222** - Nullable string condition needs explicit handling
+5. **completion-detector.ts:55** - Nullable string handling in workspacePath check
+6. **Import order issues** - Multiple files need import order fixes
+
+### Fix Tasks
+
+#### ESLint Configuration
+
+- [ ] T083 Install eslint-import-resolver-typescript package: `npm install -D eslint-import-resolver-typescript`
+- [ ] T084 Update .eslintrc.json import/resolver settings to use correct package reference
+- [ ] T085 Verify ESLint resolver works by running `npm run lint` and confirming no "Resolve error" messages
+
+#### diagnostician.ts Code Quality
+
+- [ ] T086 Remove async keyword from detectCompletion method (no await needed) in src/agent/diagnostician.ts:158
+- [ ] T087 [P] Replace `lastUser && lastUser.content` with optional chain `lastUser?.content` in src/agent/diagnostician.ts:194
+- [ ] T088 [P] Add explicit empty string check for entry.timestamp in src/agent/diagnostician.ts:222
+
+#### completion-detector.ts Nullable String
+
+- [ ] T089 [P] Add explicit string check for workspacePath in src/agent/diagnostics/completion-detector.ts:55
+
+#### Import Order Fixes
+
+- [ ] T090 [P] Fix import order in src/agent/diagnostician.ts - add empty line between import groups
+- [ ] T091 [P] Fix import order in src/agent/diagnostics/completion-detector.ts - reorder fast-glob import
+- [ ] T092 [P] Fix import order in src/cli/commands/cleanup.ts - reorder node:* imports
+- [ ] T093 [P] Fix import order in src/cli/commands/flow.ts - reorder imports
+
+#### Final Verification
+
+- [ ] T094 Run `npm run lint` and capture any remaining issues
+- [ ] T095 Run `npm run lint:fix` to auto-fix remaining formatting issues
+- [ ] T096 Run `npm run test` to ensure no regressions
+- [ ] T097 Commit fixes with message: `fix: resolve PR #1 code review issues (linting, async/await, optional chain)`
+
+**Checkpoint**: All lint errors resolved, tests passing, ready for merge.
+
+---
+
 ## Notes
 
 - [P] tasks = different files, no dependencies
