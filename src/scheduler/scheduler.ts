@@ -3,12 +3,14 @@
  */
 
 import { v4 as uuidv4 } from 'uuid';
+
+import type { IFlowLoader } from '../flow/contracts.js';
 import { getLogger } from '../logging/logger.js';
 import { SessionNotFoundError } from '../types/errors.js';
-import { getTimestamp } from '../utils/time.js';
-import type { IScheduler, ISessionManager, DecisionRecord } from './contracts.js';
-import type { IFlowLoader } from '../flow/contracts.js';
 import type { Session, SessionState } from '../types/index.js';
+import { getTimestamp } from '../utils/time.js';
+
+import type { IScheduler, ISessionManager, DecisionRecord } from './contracts.js';
 
 const log = getLogger();
 

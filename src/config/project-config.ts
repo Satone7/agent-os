@@ -3,8 +3,9 @@
  */
 
 import { cosmiconfigSync } from 'cosmiconfig';
-import { getLogger } from '../logging/logger.js';
 import { z } from 'zod';
+
+import { getLogger } from '../logging/logger.js';
 
 const log = getLogger();
 

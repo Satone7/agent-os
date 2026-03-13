@@ -2,12 +2,14 @@
  * Start command implementation
  */
 
-import inquirer from 'inquirer';
-import { FlowLoader } from '../../flow/loader.js';
-import { SessionManager } from '../../scheduler/session-manager.js';
-import { Scheduler } from '../../scheduler/scheduler.js';
 import * as os from 'node:os';
 import * as path from 'node:path';
+
+import inquirer from 'inquirer';
+
+import { FlowLoader } from '../../flow/loader.js';
+import { Scheduler } from '../../scheduler/scheduler.js';
+import { SessionManager } from '../../scheduler/session-manager.js';
 
 
 interface StartOptions {

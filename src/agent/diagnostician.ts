@@ -3,7 +3,9 @@
  */
 
 import * as fs from 'node:fs/promises';
+
 import { getLogger } from '../logging/logger.js';
+
 import type { IDiagnostician, DiagnosticResult, ConversationMessage } from './contracts.js';
 
 const log = getLogger();
@@ -29,7 +31,7 @@ export class Diagnostician implements IDiagnostician {
       }
 
       // Check for completion
-      const completionScore = await this.detectCompletion(messages, []);
+      const completionScore = this.detectCompletion(messages, []);
       if (completionScore > 0.8) {
         return {
           status: 'completed',
@@ -155,10 +157,10 @@ export class Diagnostician implements IDiagnostician {
   /**
    * Detect completion signals
    */
-  async detectCompletion(
+  detectCompletion(
     messages: ConversationMessage[],
     _expectedOutputs: string[]
-  ): Promise<number> {
+  ): number {
     if (messages.length === 0) {
       return 0;
     }
@@ -191,7 +193,7 @@ export class Diagnostician implements IDiagnostician {
 
     // Check if conversation ended with user acknowledgment pattern
     const lastUser = messages.filter((m) => m.role === 'user').pop();
-    if (lastUser && lastUser.content.toLowerCase().includes('continue')) {
+    if (lastUser?.content.toLowerCase().includes('continue') === true) {
       return 0.3;
     }
 
@@ -219,7 +221,10 @@ export class Diagnostician implements IDiagnostician {
             messages.push({
               role: entry.message.role as 'user' | 'assistant' | 'system',
               content: entry.message.content,
-              timestamp: entry.timestamp ? new Date(entry.timestamp) : new Date(),
+              timestamp:
+                entry.timestamp !== undefined && entry.timestamp !== ''
+                  ? new Date(entry.timestamp)
+                  : new Date(),
             });
           }
         } catch {

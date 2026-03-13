@@ -379,33 +379,33 @@ With multiple developers:
 
 #### ESLint Configuration
 
-- [ ] T083 Install eslint-import-resolver-typescript package: `npm install -D eslint-import-resolver-typescript`
-- [ ] T084 Update .eslintrc.json import/resolver settings to use correct package reference
-- [ ] T085 Verify ESLint resolver works by running `npm run lint` and confirming no "Resolve error" messages
+- [X] T083 Install eslint-import-resolver-typescript package: `npm install -D eslint-import-resolver-typescript`
+- [X] T084 Update .eslintrc.json import/resolver settings to use correct package reference
+- [X] T085 Verify ESLint resolver works by running `npm run lint` and confirming no "Resolve error" messages
 
 #### diagnostician.ts Code Quality
 
-- [ ] T086 Remove async keyword from detectCompletion method (no await needed) in src/agent/diagnostician.ts:158
-- [ ] T087 [P] Replace `lastUser && lastUser.content` with optional chain `lastUser?.content` in src/agent/diagnostician.ts:194
-- [ ] T088 [P] Add explicit empty string check for entry.timestamp in src/agent/diagnostician.ts:222
+- [X] T086 Remove async keyword from detectCompletion method (no await needed) in src/agent/diagnostician.ts:158
+- [X] T087 [P] Replace `lastUser && lastUser.content` with optional chain `lastUser?.content` in src/agent/diagnostician.ts:194
+- [X] T088 [P] Add explicit empty string check for entry.timestamp in src/agent/diagnostician.ts:222
 
 #### completion-detector.ts Nullable String
 
-- [ ] T089 [P] Add explicit string check for workspacePath in src/agent/diagnostics/completion-detector.ts:55
+- [X] T089 [P] Add explicit string check for workspacePath in src/agent/diagnostics/completion-detector.ts:55
 
 #### Import Order Fixes
 
-- [ ] T090 [P] Fix import order in src/agent/diagnostician.ts - add empty line between import groups
-- [ ] T091 [P] Fix import order in src/agent/diagnostics/completion-detector.ts - reorder fast-glob import
-- [ ] T092 [P] Fix import order in src/cli/commands/cleanup.ts - reorder node:* imports
-- [ ] T093 [P] Fix import order in src/cli/commands/flow.ts - reorder imports
+- [X] T090 [P] Fix import order in src/agent/diagnostician.ts - add empty line between import groups
+- [X] T091 [P] Fix import order in src/agent/diagnostics/completion-detector.ts - reorder fast-glob import
+- [X] T092 [P] Fix import order in src/cli/commands/cleanup.ts - reorder node:* imports
+- [X] T093 [P] Fix import order in src/cli/commands/flow.ts - reorder imports
 
 #### Final Verification
 
-- [ ] T094 Run `npm run lint` and capture any remaining issues
-- [ ] T095 Run `npm run lint:fix` to auto-fix remaining formatting issues
-- [ ] T096 Run `npm run test` to ensure no regressions
-- [ ] T097 Commit fixes with message: `fix: resolve PR #1 code review issues (linting, async/await, optional chain)`
+- [X] T094 Run `npm run lint` and capture any remaining issues
+- [X] T095 Run `npm run lint:fix` to auto-fix remaining formatting issues
+- [X] T096 Run `npm run test` to ensure no regressions
+- [X] T097 Commit fixes with message: `fix: resolve PR #1 code review issues (linting, async/await, optional chain)`
 
 **Checkpoint**: All lint errors resolved, tests passing, ready for merge.
 

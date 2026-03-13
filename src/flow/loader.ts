@@ -4,12 +4,15 @@
 
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+
 import * as yaml from 'js-yaml';
+
 import { getLogger } from '../logging/logger.js';
 import { FlowNotFoundError, FlowValidationError } from '../types/errors.js';
-import { safeValidateFlow } from './validator.js';
-import type { IFlowLoader, FlowMeta } from './contracts.js';
 import type { Flow } from '../types/index.js';
+
+import type { IFlowLoader, FlowMeta } from './contracts.js';
+import { safeValidateFlow } from './validator.js';
 
 const log = getLogger();
 

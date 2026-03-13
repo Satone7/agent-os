@@ -2,10 +2,11 @@
  * List command implementation
  */
 
-import { SessionManager } from '../../scheduler/session-manager.js';
+import * as fs from 'node:fs/promises';
 import * as os from 'node:os';
 import * as path from 'node:path';
-import * as fs from 'node:fs/promises';
+
+import { SessionManager } from '../../scheduler/session-manager.js';
 
 
 interface ListOptions {

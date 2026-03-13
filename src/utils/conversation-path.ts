@@ -2,8 +2,8 @@
  * Conversation path resolver
  */
 
-import * as path from 'node:path';
 import * as os from 'node:os';
+import * as path from 'node:path';
 
 /**
  * Get the conversation file path for a workspace

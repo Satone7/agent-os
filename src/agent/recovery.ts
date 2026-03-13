@@ -105,7 +105,7 @@ export function decideRecovery(context: RecoveryContext): RecoveryDecision {
     default:
       return {
         action: 'retry',
-        reason: `Unknown error type: ${error.type}`,
+        reason: `Unknown error type: ${String(error.type)}`,
       };
   }
 }

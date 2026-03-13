@@ -52,7 +52,7 @@ export interface IDiagnostician {
   detectCompletion(
     messages: ConversationMessage[],
     expectedOutputs: string[]
-  ): Promise<number>;
+  ): number;
 }
 
 /**

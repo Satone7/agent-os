@@ -2,10 +2,11 @@
  * /log interactive command
  */
 
-import type { IInteractiveCommand, CommandContext, CommandResult } from './base.js';
 import * as fs from 'node:fs/promises';
-import * as path from 'node:path';
 import * as os from 'node:os';
+import * as path from 'node:path';
+
+import type { IInteractiveCommand, CommandContext, CommandResult } from './base.js';
 
 /**
  * View recent logs

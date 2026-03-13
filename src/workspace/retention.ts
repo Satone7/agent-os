@@ -3,8 +3,9 @@
  */
 
 import { getLogger } from '../logging/logger.js';
-import { WorkspaceManager } from './manager.js';
+
 import type { IRetentionPolicy, RetentionConfig, CleanupOptions, CleanupResult } from './contracts.js';
+import { WorkspaceManager } from './manager.js';
 
 const log = getLogger();
 

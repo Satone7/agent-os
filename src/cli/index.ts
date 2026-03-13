@@ -3,6 +3,7 @@
  */
 
 import { Command } from 'commander';
+
 import { getLogger } from '../logging/logger.js';
 
 const log = getLogger();

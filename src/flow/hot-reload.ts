@@ -3,7 +3,9 @@
  */
 
 import chokidar from 'chokidar';
+
 import { getLogger } from '../logging/logger.js';
+
 import type { IFlowLoader } from './contracts.js';
 
 const log = getLogger();

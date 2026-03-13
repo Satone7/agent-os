@@ -3,8 +3,10 @@
  */
 
 import { v4 as uuidv4 } from 'uuid';
-import { parseDuration } from '../utils/time.js';
+
 import { getLogger } from '../logging/logger.js';
+import { parseDuration } from '../utils/time.js';
+
 import type { IMonitor, MonitorHandle } from './contracts.js';
 
 const log = getLogger();

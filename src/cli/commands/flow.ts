@@ -2,9 +2,10 @@
  * Flow commands implementation
  */
 
-import { FlowLoader } from '../../flow/loader.js';
 import * as os from 'node:os';
 import * as path from 'node:path';
+
+import { FlowLoader } from '../../flow/loader.js';
 
 
 /**

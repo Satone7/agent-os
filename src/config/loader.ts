@@ -2,11 +2,13 @@
  * Configuration loader using cosmiconfig
  */
 
-import { cosmiconfig, cosmiconfigSync } from 'cosmiconfig';
-import * as path from 'node:path';
 import * as os from 'node:os';
-import { getLogger } from '../logging/logger.js';
+import * as path from 'node:path';
+
+import { cosmiconfig, cosmiconfigSync } from 'cosmiconfig';
 import { z } from 'zod';
+
+import { getLogger } from '../logging/logger.js';
 
 const log = getLogger();
 

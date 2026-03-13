@@ -4,7 +4,9 @@
 
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+
 import { getLogger } from '../logging/logger.js';
+
 import type { IWorkspaceManager, WorkspaceInfo } from './contracts.js';
 
 const log = getLogger();

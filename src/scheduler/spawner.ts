@@ -3,12 +3,14 @@
  */
 
 import { spawn, type ChildProcess } from 'node:child_process';
-import * as path from 'node:path';
 import * as os from 'node:os';
+import * as path from 'node:path';
+
 import { v4 as uuidv4 } from 'uuid';
+
+import type { ISpawner, SubAgentSpawnConfig, SubAgentProcess } from '../agent/contracts.js';
 import { getLogger } from '../logging/logger.js';
 import { SubAgentSpawnError } from '../types/errors.js';
-import type { ISpawner, SubAgentSpawnConfig, SubAgentProcess } from '../agent/contracts.js';
 
 const log = getLogger();
 
@@ -157,7 +159,7 @@ export class Spawner implements ISpawner {
   async sendInput(processId: string, input: string): Promise<void> {
     const childProcess = this.childProcesses.get(processId);
 
-    if (!childProcess || !childProcess.stdin) {
+    if (!childProcess?.stdin) {
       throw new Error(`Process ${processId} not found or not accepting input`);
     }
 

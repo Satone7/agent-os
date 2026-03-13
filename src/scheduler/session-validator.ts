@@ -2,8 +2,8 @@
  * Session state validator for crash recovery
  */
 
-import type { Session } from '../types/index.js';
 import { safeValidateSession } from '../schemas/session-schema.js';
+import type { Session } from '../types/index.js';
 
 export interface ValidationResult {
   valid: boolean;

@@ -2,10 +2,11 @@
  * Stop command implementation
  */
 
-import { SessionManager } from '../../scheduler/session-manager.js';
-import { SessionNotFoundError } from '../../types/errors.js';
 import * as os from 'node:os';
 import * as path from 'node:path';
+
+import { SessionManager } from '../../scheduler/session-manager.js';
+import { SessionNotFoundError } from '../../types/errors.js';
 
 
 /**

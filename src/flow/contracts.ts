@@ -2,8 +2,8 @@
  * Flow Engine Module Contracts
  */
 
-import type { Flow, Phase, FlowTrigger } from '../types/index.js';
 import type { ValidationError } from '../types/errors.js';
+import type { Flow, Phase, FlowTrigger } from '../types/index.js';
 
 /**
  * Flow definition loader

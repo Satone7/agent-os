@@ -4,12 +4,14 @@
 
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+
 import { getLogger } from '../logging/logger.js';
+import { safeValidateSession } from '../schemas/session-schema.js';
 import { SessionNotFoundError } from '../types/errors.js';
-import type { ISessionManager, DecisionRecord } from './contracts.js';
 import type { Session, PhaseStatus } from '../types/index.js';
 import { getTimestamp } from '../utils/time.js';
-import { safeValidateSession } from '../schemas/session-schema.js';
+
+import type { ISessionManager, DecisionRecord } from './contracts.js';
 
 const log = getLogger();
 

@@ -2,8 +2,9 @@
  * Completion detection algorithm
  */
 
-import type { ConversationMessage } from '../contracts.js';
 import fg from 'fast-glob';
+
+import type { ConversationMessage } from '../contracts.js';
 
 export interface CompletionDetectionResult {
   isComplete: boolean;
@@ -52,7 +53,7 @@ export async function detectCompletion(
 
   // Check for output files
   const missingOutputs: string[] = [];
-  if (workspacePath && expectedOutputs.length > 0) {
+  if (workspacePath !== undefined && workspacePath !== '' && expectedOutputs.length > 0) {
     for (const pattern of expectedOutputs) {
       try {
         const files = await fg(pattern, { cwd: workspacePath });
